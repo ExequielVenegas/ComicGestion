@@ -5,26 +5,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Clase de pruebas unitarias para la clase {@link Comic}.
- * Contiene tests para el constructor, getters, setters y el método toString.
- */
 class ComicTest {
 
     private Comic comicEjemplo;
 
-    /**
-     * Configura el entorno antes de cada test.
-     * Se crea una instancia de Comic para ser usada en múltiples pruebas.
-     */
     @BeforeEach
     void setUp() {
         comicEjemplo = new Comic("The Amazing Spider-Man #1", "Stan Lee", "ASM001", "disponible");
     }
 
-    /**
-     * Prueba el constructor de la clase Comic para asegurar que los valores se asignan correctamente.
-     */
     @Test
     @DisplayName("Test de constructor y getters")
     void testConstructorAndGetters() {
@@ -34,9 +23,6 @@ class ComicTest {
         assertEquals("disponible", comicEjemplo.getEstado(), "El estado debería coincidir");
     }
 
-    /**
-     * Prueba el constructor de la clase Comic con valores nulos, esperando una NullPointerException.
-     */
     @Test
     @DisplayName("Test de constructor con parámetros nulos")
     void testConstructorNullParameters() {
@@ -61,9 +47,6 @@ class ComicTest {
         assertTrue(exceptionEstado.getMessage().contains("estado"), "Mensaje de error para estado nulo incorrecto.");
     }
 
-    /**
-     * Prueba los métodos setter para asegurar que el estado y el ID se pueden cambiar.
-     */
     @Test
     @DisplayName("Test de setters")
     void testSetters() {
@@ -74,9 +57,6 @@ class ComicTest {
         assertEquals("ASM001-REV", comicEjemplo.getId(), "El ID debería cambiar a 'ASM001-REV'");
     }
 
-    /**
-     * Prueba el método toString para asegurar que la representación en cadena es correcta.
-     */
     @Test
     @DisplayName("Test de toString")
     void testToString() {
